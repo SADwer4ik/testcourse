@@ -5,9 +5,11 @@ version = "1.0"
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
+
+group = "ru.ac.uniyar.testingcourse"
 
 repositories {
     mavenCentral()
@@ -15,8 +17,12 @@ repositories {
 
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.12.0")
+    testImplementation("junit:junit:4.13.1")
 }
 
-tasks.test{
-    useJUnitPlatform()
+tasks.withType<Test> {
+    useJUnitPlatform{
+        includeEngines ("junit-jupiter")
+        excludeEngines ("junit-vintage")
+    }
 }
