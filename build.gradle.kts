@@ -3,13 +3,13 @@ plugins {
 }
 version = "1.0"
 
+group = "ru.ac.uniyar.testingcourse"
+
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(21))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
-
-group = "ru.ac.uniyar.testingcourse"
 
 repositories {
     mavenCentral()
@@ -17,7 +17,7 @@ repositories {
 
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.12.0")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.12.1")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.12.0")
 }
 
 tasks.withType<Test> {
